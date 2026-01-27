@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"
-    <meta name="description" content="Schedule for boxer's training based on day of week"
+    <meta name="description" content="Schedule for boxer's training based on day of week">
     <title>Training Scheduler</title>
 
     <style>
         body {
-            background-color: chocolate;
+            background-color: rgb(249, 202, 169);
         }
 
         h1 {
@@ -20,8 +20,26 @@
     <h1>Training Scheduler</h1>
 
     <div>
-        <label for="weekDay">Enter the day of week</label>
-        <select id="weekDay"></select>
+        <form>
+            <label for="weekDay">Enter the day of week</label>
+            <select id="weekDay" name="weekDay">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select> 
+            
+            <button type="button" onclick="showTraining()">Get Training Schedule</button>
+        </form>
     </div>
+
+    <div>
+        
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
