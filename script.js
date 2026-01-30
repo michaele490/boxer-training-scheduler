@@ -67,5 +67,17 @@ function setEveningTraining () {
 }
 
 function displayTraining () {
+    const morningTraining = setMorningTraining();
+    const eveningTraining = setEveningTraining();
 
+    if (morningTraining === "None" && eveningTraining === "None") {
+        const restDayText = document.getElementById("restDay");
+        restDay.innerHTML = "Rest Day";
+    }
+
+    const morningText = document.getElementById("morning");
+    morningText.innerHTML = morningTraining;
+
+    const eveningText = document.getElementById("evening");
+    eveningText.innerHTML = eveningTraining;
 }
