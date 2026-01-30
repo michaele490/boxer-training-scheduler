@@ -1,37 +1,71 @@
-function setTraining() {
+function setMorningTraining() {
     const day = document.querySelector("select").value;
     let morningTraining;
-    let eveningTraining;
     let restDay = false;
+
+    if (day === "Thursday" || day === "Sunday") {
+        restDay = true;
+    }
+
+    if (restDay) {
+        morningTraining = "None";
+    }
+
     switch (day) {
         case "Monday":
             morningTraining = "Suicide runs";
-            eveningTraining = "Bag work";
             break;
         case "Tuesday":
             morningTraining = "Strength training: Upper body";
-            eveningTraining = "15 rounds sparring";
             break;
         case "Wednesday":
             morningTraining = "7.5km run and calisthenics";
-            eveningTraining = "Jump rope and padwork";
-            break;
-        case "Thursday":
-            morningTraining = "None";
-            eveningTraining = "None";
-            restDay = true;
             break;
         case "Friday":
             morningTraining = "Jump rope and footwork drills";
-            eveningTraining = "Circuits and shadowboxing";
             break;
         case "Saturday":
             morningTraining = "Hill sprints and sparring";
+            break;
+    }
+
+    return morningTraining;
+}
+
+function setEveningTraining () {
+    const day = document.querySelector("select").value;
+    let eveningTraining;
+    let restDay = false;
+
+    if (day === "Thursday" || day === "Sunday") {
+        restDay = true;
+    }
+
+    if (restDay) {
+        eveningTraining = "None";
+    }
+
+    switch (day) {
+        case "Monday":
+            eveningTraining = "Bag work";
+            break;
+        case "Tuesday":
+            eveningTraining = "15 rounds sparring";
+            break;
+        case "Wednesday":
+            eveningTraining = "Jump rope and padwork";
+            break;
+        case "Friday":
+            eveningTraining = "Circuits and shadowboxing";
+            break;
+        case "Saturday":
             eveningTraining = "Strength training: Lower body";
             break;
-        case "Sunday":
-            morningTraining = "None";
-            eveningTraining = "None";
-            restDay = true;
     }
+
+    return eveningTraining;
+}
+
+function displayTraining () {
+
 }
