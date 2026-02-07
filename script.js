@@ -70,14 +70,22 @@ function displayTraining () {
     const morningTraining = setMorningTraining();
     const eveningTraining = setEveningTraining();
 
+    const morningText = document.getElementById("morning");
+    const eveningText = document.getElementById("evening");
+
     if (morningTraining === "None" && eveningTraining === "None") {
         const restDayText = document.getElementById("restDay");
-        restDay.innerHTML = "Rest Day";
+        restDayText.innerHTML = "Rest Day";
+        
+        morningText.style.display = "none";
+        eveningText.style.display = "none";
+    } else {
+        restDay.innerHTML = "";
+
+        morningText.style.display = "block";
+        eveningText.style.display= "block";
     }
 
-    const morningText = document.getElementById("morning");
     morningText.innerHTML = morningTraining;
-
-    const eveningText = document.getElementById("evening");
     eveningText.innerHTML = eveningTraining;
 }
